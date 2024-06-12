@@ -71,6 +71,7 @@ router.post(
         audio_url,
       });
       if (transcript?.text) fs.unlinkSync(req.file.path);
+      console.log({ data: transcript.text });
       res.json({ data: transcript.text });
     } catch (e) {
       next(e);
